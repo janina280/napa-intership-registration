@@ -1,0 +1,25 @@
+<h2>Voyages</h2>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Ship ID</th>
+    <th>Departure Port ID</th>
+    <th>Arrival Port ID</th>
+    <th>Voyage Date</th>
+    <th>Start</th>
+    <th>End</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let voyage of voyages">
+    <td>{{ voyage.id }}</td>
+    <td>{{ voyage.shipId }}</td>
+    <td>{{ voyage.departurePortId }}</td>
+    <td>{{ voyage.arrivalPortId }}</td>
+    <td>{{ voyage.voyageDate }}</td>
+    <td>{{ voyage.voyageStart }}</td>
+    <td>{{ voyage.voyageEnd }}</td>
+  </tr>
+  </tbody>
+</table>

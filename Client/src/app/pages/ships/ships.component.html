@@ -1,0 +1,17 @@
+<h2>Ships</h2>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Maximum Speed</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ship of ships">
+    <td>{{ ship.id }}</td>
+    <td>{{ ship.name }}</td>
+    <td>{{ ship.maximumSpeed }}</td>
+  </tr>
+  </tbody>
+</table>

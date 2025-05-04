@@ -1,0 +1,17 @@
+<h2>Ports</h2>
+<table border="1">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Country</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let port of ports">
+    <td>{{ port.id }}</td>
+    <td>{{ port.name }}</td>
+    <td>{{ port.country }}</td>
+  </tr>
+  </tbody>
+</table>
