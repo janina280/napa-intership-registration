@@ -32,7 +32,7 @@ public class PortService : IPortService
         }
         catch (Exception ex)
         {
-            _logger.LogInformation(ex.Message);
+            _logger.LogError(ex.Message);
             return new ServiceResponse<List<Port>>(ex);
         }
     }
@@ -47,7 +47,7 @@ public class PortService : IPortService
         }
         catch (Exception ex)
         {
-            _logger.LogInformation(ex.Message);
+            _logger.LogError(ex.Message);
             return new ServiceResponse<Port>(ex);
         }
     }
@@ -62,7 +62,7 @@ public class PortService : IPortService
         }
         catch (Exception ex)
         {
-            _logger.LogInformation(ex.Message);
+            _logger.LogError(ex.Message);
             return new ServiceResponse(ex);
         }
     }
@@ -77,7 +77,7 @@ public class PortService : IPortService
         }
         catch (Exception ex)
         {
-            _logger.LogInformation(ex.Message);
+            _logger.LogError(ex.Message);
             return new ServiceResponse(ex);
         }
     }
@@ -91,7 +91,7 @@ public class PortService : IPortService
         }
         catch (Exception ex)
         {
-            _logger.LogInformation(ex.Message);
+            _logger.LogError(ex.Message);
             return new ServiceResponse(ex);
         }
     }

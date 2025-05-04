@@ -28,6 +28,7 @@ public static class DependencyInjection
     {
         services.AddScoped<IPortTrackerContext, PortTrackerContext>();
         services.AddScoped<IPortRepository, PortRepository>();
+        services.AddScoped<IShipRepository, ShipRepository>();
         services.AddScoped<IVoyageRepository, VoyageRepository>();
 
         return services;
