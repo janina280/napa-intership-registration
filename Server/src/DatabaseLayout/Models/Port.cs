@@ -8,6 +8,6 @@ public class Port
     public string Name { get; set; } = string.Empty;
     public string Country { get; set; } = string.Empty;
 
-    public ICollection<Voyage> Depar tingVoyages { get; set; } = new List<Voyage>();
+    public ICollection<Voyage> DepartingVoyages { get; set; } = new List<Voyage>();
     public ICollection<Voyage> ArrivingVoyages { get; set; } = new List<Voyage>();
 }
