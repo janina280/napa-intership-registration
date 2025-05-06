@@ -2,9 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {ShipService} from '../../services/ship.service';
 import {PortService} from '../../services/port.service';
 import {VoyageService} from '../../services/voyage.service';
+import {BaseChartDirective} from 'ng2-charts';
 
 @Component({
   selector: 'app-dashboard',
+  imports: [
+    BaseChartDirective
+  ],
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
