@@ -6,7 +6,7 @@ import {PortService} from '../../services/port.service';
   selector: 'app-ports',
   imports: [],
   templateUrl: './ports.component.html',
-  styleUrl: './ports.component.css'
+  styleUrls: ['./ports.component.css']
 })
 export class PortsComponent implements OnInit {
   ports: Port[] = [];

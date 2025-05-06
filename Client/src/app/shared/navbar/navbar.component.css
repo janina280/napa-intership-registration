@@ -1,0 +1,13 @@
+
+nav .navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav .navbar-nav .nav-link.active {
+  background-color: #007bff !important;
+  color: #fff !important;
+  border-radius: 5px;
+}

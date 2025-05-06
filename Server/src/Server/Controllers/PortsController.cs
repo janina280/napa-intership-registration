@@ -6,12 +6,12 @@ using Services.Models;
 
 namespace Server.Controllers;
 
-public class PortController : BaseController
+public class PortsController : BaseController
 {
     private readonly IPortService _portService;
-    private readonly ILogger<PortController> _logger;
+    private readonly ILogger<PortsController> _logger;
 
-    public PortController(IPortService portService, ILogger<PortController> logger)
+    public PortsController(IPortService portService, ILogger<PortsController> logger)
     {
         _portService = portService;
         _logger = logger;
