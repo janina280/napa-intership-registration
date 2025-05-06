@@ -6,12 +6,12 @@ using Services.Models;
 
 namespace Server.Controllers;
 
-public class VoyageController : BaseController
+public class VoyagesController : BaseController
 {
     private readonly IVoyageService _voyageService;
-    private readonly ILogger<VoyageController> _logger;
+    private readonly ILogger<VoyagesController> _logger;
 
-    public VoyageController(IVoyageService voyageService, ILogger<VoyageController> logger)
+    public VoyagesController(IVoyageService voyageService, ILogger<VoyagesController> logger)
     {
         _voyageService = voyageService;
         _logger = logger;

@@ -1,10 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {Voyage} from '../../models/voyage';
 import {VoyageService} from '../../services/voyage.service';
+import {DatePipe, NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-voyages',
-  imports: [],
+  imports: [
+    NgForOf,
+    DatePipe
+  ],
   templateUrl: './voyages.component.html',
   styleUrl: './voyages.component.css'
 })

@@ -6,12 +6,12 @@ using Services.Models;
 
 namespace Server.Controllers;
 
-public class ShipController : BaseController
+public class ShipsController : BaseController
 {
     private readonly IShipService _shipService;
-    private readonly ILogger<ShipController> _logger;
+    private readonly ILogger<ShipsController> _logger;
 
-    public ShipController(IShipService shipService, ILogger<ShipController> logger)
+    public ShipsController(IShipService shipService, ILogger<ShipsController> logger)
     {
         _shipService = shipService;
         _logger = logger;

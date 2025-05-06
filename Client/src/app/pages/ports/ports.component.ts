@@ -1,10 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {Port} from '../../models/port';
 import {PortService} from '../../services/port.service';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-ports',
-  imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './ports.component.html',
   styleUrls: ['./ports.component.css']
 })

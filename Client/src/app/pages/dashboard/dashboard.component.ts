@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {ShipService} from '../../services/ship.service';
-import {PortService} from '../../services/port.service';
-import {VoyageService} from '../../services/voyage.service';
-import {BaseChartDirective} from 'ng2-charts';
+import {Component, HostListener, OnInit} from '@angular/core';
+import { ShipService } from '../../services/ship.service';
+import { PortService } from '../../services/port.service';
+import { VoyageService } from '../../services/voyage.service';
+import { Chart, registerables } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-dashboard',
   imports: [
     BaseChartDirective
   ],
-  templateUrl: './dashboard.component.html'
+  templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent implements OnInit {
   shipLabels: string[] = [];
@@ -25,12 +26,15 @@ export class DashboardComponent implements OnInit {
     private shipService: ShipService,
     private portService: PortService,
     private voyageService: VoyageService
-  ) {}
+  ) {
+    Chart.register(...registerables);
+  }
 
   ngOnInit(): void {
     this.shipService.getAll().subscribe(ships => {
       this.shipLabels = ships.map(s => s.name);
       this.shipData = ships.map(s => s.maximumSpeed);
+      console.log('Ship Data:', this.shipData);
     });
 
     this.portService.getAll().subscribe(ports => {
@@ -50,7 +54,6 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  // Chart configs
   shipChartOptions = {
     responsive: true
   };

@@ -18,9 +18,10 @@
     <td>{{ voyage.shipId }}</td>
     <td>{{ voyage.departurePortId }}</td>
     <td>{{ voyage.arrivalPortId }}</td>
-    <td>{{ voyage.voyageDate }}</td>
-    <td>{{ voyage.voyageStart }}</td>
-    <td>{{ voyage.voyageEnd }}</td>
+    <td>{{ voyage.voyageDate | date: 'medium' }}</td>
+    <td>{{ voyage.voyageStart | date: 'medium' }}</td>
+    <td>{{ voyage.voyageEnd | date: 'medium' }}</td>
+
   </tr>
   </tbody>
 </table>
