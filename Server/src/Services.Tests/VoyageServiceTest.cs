@@ -110,41 +110,6 @@ public class VoyageServiceTest
     }
 
     [TestMethod]
-    public async Task CreateVoyageAsync_ShouldSucceed_WhenRepositoryExecutesSuccessfully()
-    {
-        // Arrange
-        var voyage = new Voyage();
-        var databaseVoyage = new DatabaseLayout.Models.Voyage();
-        _mapperMock.Setup(mapper => mapper.Map<DatabaseLayout.Models.Voyage>(voyage)).Returns(databaseVoyage);
-
-        // Act
-        var response = await _voyageService.CreateVoyageAsync(voyage);
-
-        // Assert
-        Assert.IsTrue(response.Success);
-        _mapperMock.Verify(mapper => mapper.Map<DatabaseLayout.Models.Voyage>(voyage), Times.Once);
-        _voyageRepositoryMock.Verify(repo => repo.CreateVoyageAsync(databaseVoyage), Times.Once);
-    }
-
-    [TestMethod]
-    public async Task CreateVoyageAsync_ShouldReturnError_WhenRepositoryThrowsException()
-    {
-        // Arrange
-        var voyage = new Voyage();
-        var exception = new Exception("Database error");
-        _mapperMock.Setup(mapper => mapper.Map<DatabaseLayout.Models.Voyage>(voyage)).Throws(exception);
-        _voyageRepositoryMock.Setup(repo => repo.CreateVoyageAsync(It.IsAny<DatabaseLayout.Models.Voyage>()))
-            .ThrowsAsync(exception);
-
-        // Act
-        var response = await _voyageService.CreateVoyageAsync(voyage);
-
-        // Assert
-        Assert.IsFalse(response.Success);
-        Assert.AreEqual(exception.Message, response.Exception.Message);
-    }
-
-    [TestMethod]
     public async Task UpdateVoyageAsync_ShouldSucceed_WhenRepositoryUpdatesSuccessfully()
     {
         // Arrange

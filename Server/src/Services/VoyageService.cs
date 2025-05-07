@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
+using Services.Dtos;
 using Services.Interfaces;
 using Services.Models;
 
@@ -52,12 +53,11 @@ public class VoyageService : IVoyageService
         }
     }
 
-    public async Task<ServiceResponse> CreateVoyageAsync(Voyage voyage)
+    public async Task<ServiceResponse> CreateVoyageAsync(VoyageDto voyage)
     {
         try
         {
-            var entity = _mapper.Map<DatabaseLayout.Models.Voyage>(voyage);
-            await _voyageRepository.CreateVoyageAsync(entity);
+            await _voyageRepository.CreateVoyageAsync(voyage);
             return new ServiceResponse();
         }
         catch (Exception ex)
@@ -66,6 +66,7 @@ public class VoyageService : IVoyageService
             return new ServiceResponse(ex);
         }
     }
+
 
     public async Task<ServiceResponse> UpdateVoyageAsync(Voyage voyage)
     {

@@ -21,4 +21,8 @@
 	  <ProjectReference Include="..\Services\Services.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Remove="Controllers\VisitedCountriesController.cs" />
+	</ItemGroup>
+
 </Project>

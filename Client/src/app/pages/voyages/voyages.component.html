@@ -1,28 +1,29 @@
 <div class="container mt-4">
-<h2 class="text-center">Voyages</h2>
-<table class="table table-striped table-bordered">
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Ship ID</th>
-    <th>Departure Port ID</th>
-    <th>Arrival Port ID</th>
-    <th>Voyage Date</th>
-    <th>Start</th>
-    <th>End</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let voyage of voyages">
-    <td>{{ voyage.id }}</td>
-    <td>{{ voyage.shipId }}</td>
-    <td>{{ voyage.departurePortId }}</td>
-    <td>{{ voyage.arrivalPortId }}</td>
-    <td>{{ voyage.voyageDate | date: 'medium' }}</td>
-    <td>{{ voyage.voyageStart | date: 'medium' }}</td>
-    <td>{{ voyage.voyageEnd | date: 'medium' }}</td>
-
-  </tr>
-  </tbody>
-</table>
+  <h2 class="text-center">Voyages</h2>
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ship</th>
+      <th>Departure Port</th>
+      <th>Arrival Port</th>
+      <th>Visited Country</th>
+      <th>Voyage Date</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let voyage of voyages">
+      <td>{{ voyage.id }}</td>
+      <td>{{ voyage.ship?.name }} (ID: {{ voyage.ship?.id }})</td>
+      <td>{{ voyage.departurePort?.name }} (ID: {{ voyage.departurePort?.id }})</td>
+      <td>{{ voyage.arrivalPort?.name }} (ID: {{ voyage.arrivalPort?.id }})</td>
+      <td>{{ voyage.arrivalPort.country }}</td>
+      <td>{{ voyage.voyageDate | date: 'medium' }}</td>
+      <td>{{ voyage.voyageStart | date: 'medium' }}</td>
+      <td>{{ voyage.voyageEnd | date: 'medium' }}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>

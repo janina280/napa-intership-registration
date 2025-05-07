@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using Services.Dtos;
 using Services.Interfaces;
 using Services.Models;
 
@@ -34,7 +35,7 @@ public class VoyagesController : BaseController
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateVoyageAsync([FromBody] Voyage newVoyageDto)
+    public async Task<IActionResult> CreateVoyageAsync([FromBody] VoyageDto newVoyageDto)
     {
         _logger.LogInformation("Create voyage");
         var result = await _voyageService.CreateVoyageAsync(newVoyageDto);
